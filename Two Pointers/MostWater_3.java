@@ -1,6 +1,6 @@
 public class MostWater_3 {
 
-    public int maxArea(int[] height) {
+    public static int maxArea(int[] height) {
         
         int max = 0;
         int left = 0;
@@ -14,15 +14,21 @@ public class MostWater_3 {
                 max = w*h;
             }
 
-        if(height[right]>height[left])
+        while(left<right && height[left]<=h)
             left++;
-        else
+        while(left<right && height[right]<=h)
             right--;    
             
     }
 
         return max;
     
+    }
+
+
+    public static void main(String[] args) {
+        int[] test = {2,3,10,5,7,8,9};
+        System.out.println(maxArea(test));
     }
     
 }
